@@ -12,3 +12,14 @@ Color setValidationColor({required bool isValid, required bool isSubmitted}) {
 
   return color;
 }
+void showSuccessSnackBar(
+    BuildContext context,
+    ) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(
+      content: Text('Sign up success'),
+      backgroundColor: greenColor,
+      behavior: SnackBarBehavior.floating,
+    ),
+  );
+}
