@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../common/utils/validation_utils.dart';
 
 part 'password_validation_event.dart';
 part 'password_validation_state.dart';
@@ -11,9 +12,9 @@ class PasswordValidationBloc extends Bloc<PasswordValidationEvent, PasswordValid
   }
 
   void _onPasswordChanged(
-    PasswordChanged event,
-    Emitter<PasswordValidationState> emit,
-  ) {
+      PasswordChanged event,
+      Emitter<PasswordValidationState> emit,
+      ) {
     final password = event.password;
 
     if (password.isEmpty) {
@@ -28,14 +29,4 @@ class PasswordValidationBloc extends Bloc<PasswordValidationEvent, PasswordValid
       emit(PasswordInvalid(status: status));
     }
   }
-}
-//todo: move to utils
-ValidationStatus setValidationStatus(String password) {
-  return ValidationStatus(
-    hasMinLength: password.length >= 8,
-    hasUppercase: password.contains(RegExp(r'[A-Z]')),
-    hasLowercase: password.contains(RegExp(r'[a-z]')),
-    hasDigit: password.contains(RegExp(r'[0-9]')),
-    hasNoSpaces: !password.contains(' '),
-  );
 }
