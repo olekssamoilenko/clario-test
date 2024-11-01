@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:form_demo/theme/theme.dart';
 
+import 'common/pages/form_page.dart';
+
 void main() {
   runApp(const Application());
 }
@@ -13,6 +15,10 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     final applicationTheme = ApplicationTheme();
 
-    return MaterialApp(title: 'Flutter Demo', theme: applicationTheme.lightTheme, home: Placeholder());
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: applicationTheme.lightTheme,
+      home: const FormPage(),
+    );
   }
 }
