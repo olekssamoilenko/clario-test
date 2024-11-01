@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:form_demo/common/pages/home_page.dart';
 import 'package:form_demo/theme/theme.dart';
-
-import 'common/pages/form_page.dart';
 
 void main() {
   runApp(const Application());
@@ -18,7 +17,7 @@ class Application extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: applicationTheme.lightTheme,
-      home: const FormPage(),
+      home: const HomePage(),
     );
   }
 }

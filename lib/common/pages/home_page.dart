@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../features/sign_in/screens/sign_in_screen.dart';
 import '../../theme/assets.dart';
 
-class FormPage extends StatelessWidget {
-  const FormPage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class FormPage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.all(30),
-                child: Placeholder()
+                child: SignInScreen(),
               ),
             ),
           ),
