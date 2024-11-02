@@ -30,6 +30,11 @@ class SignInScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
+          Text(
+            'Sign up',
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          const SizedBox(height: 40),
           const EmailInput(),
           const SizedBox(height: 20),
           const PasswordInput(),
@@ -37,6 +42,9 @@ class SignInScreen extends StatelessWidget {
             text: 'Sign up',
             onPressed: () => context.read<ValidationBloc>().add(FormSubmitted()),
           ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height / 5,
+          )
         ],
       ),
     );
