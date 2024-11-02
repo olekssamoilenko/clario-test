@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../features/sign_in/screens/sign_in_screen.dart';
 import '../../theme/assets.dart';
 
 class HomePage extends StatelessWidget {
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
             child: SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.all(30),
-                child: Placeholder(),
+                child: SignInScreen(),
               ),
             ),
           ),
