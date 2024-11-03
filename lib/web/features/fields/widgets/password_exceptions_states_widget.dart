@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:form_demo/web/features/fields/widgets/password_initial_widget.dart';
-import 'package:form_demo/web/features/fields/widgets/realtime_validation_widget.dart';
+import 'package:form_demo/web/features/fields/widgets/password_fields/password_initial_widget.dart';
+import 'package:form_demo/web/features/fields/widgets/password_fields/realtime_validation_widget.dart';
 import 'package:simple_grid/simple_grid.dart';
 
 
 import '../../../../common/bloc/validation_bloc/validation_bloc.dart';
 import '../../../../common/utils/app_utils.dart';
-import 'clicked_validation_widget.dart';
+import 'password_fields/clicked_validation_widget.dart';
 
 class PasswordExceptionsStates extends StatelessWidget {
   const PasswordExceptionsStates({

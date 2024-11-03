@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/email_fields_states_widget.dart';
-import '../widgets/header_text_widget.dart';
 import '../widgets/password_exceptions_states_widget.dart';
-import '../widgets/password_fields_states_widget.dart';
-import '../widgets/regular_text_block.dart';
+import '../widgets/password_fields/password_fields_states_widget.dart';
+import '../widgets/text_widgets/header_text_widget.dart';
+import '../widgets/text_widgets/regular_text_block.dart';
 
 class WebFieldsScreen extends StatelessWidget {
   const WebFieldsScreen({super.key});

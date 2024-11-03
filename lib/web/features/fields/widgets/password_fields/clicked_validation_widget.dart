@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../common/bloc/validation_bloc/validation_bloc.dart';
-import '../../../../common/consts/color_consts.dart';
-import '../../../../features/sign_in/widgets/validator_status_widget.dart';
-import '../../../../theme/assets.dart';
+import '../../../../../common/bloc/validation_bloc/validation_bloc.dart';
+import '../../../../../common/consts/color_consts.dart';
+import '../../../../../features/sign_in/widgets/validator_status_widget.dart';
+import '../../../../../theme/assets.dart';
 
 
 class ClickedValidationWidget extends StatefulWidget {
