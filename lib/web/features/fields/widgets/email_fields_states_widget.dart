@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:simple_grid/simple_grid.dart';
 
-import '../../../../common/consts/color_consts.dart';
 import '../../../../common/utils/app_utils.dart';
+import 'input_widgets/disabled_field_widget.dart';
+import 'input_widgets/error_field_widget.dart';
+import 'input_widgets/focused_field_widget.dart';
+import 'input_widgets/initial_field_widget.dart';
 
 class EmailFieldStates extends StatefulWidget {
   const EmailFieldStates({super.key});
@@ -13,13 +16,9 @@ class EmailFieldStates extends StatefulWidget {
 
 class _EmailFieldStatesState extends State<EmailFieldStates> {
   final _formKey = GlobalKey<FormState>();
-
   late final FocusNode _focusNode;
-
-  /// Need this to show error right after form init
   final _isErrorNotifier = ValueNotifier<bool>(false);
   late final TextEditingController _emailController;
-
 
   @override
   void initState() {
@@ -27,7 +26,6 @@ class _EmailFieldStatesState extends State<EmailFieldStates> {
     _focusNode = FocusNode()..requestFocus();
     _emailController = TextEditingController(text: 'Example.com');
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      /// Need this to show error right after form init
       _formKey.currentState?.validate();
     });
   }
@@ -53,47 +51,26 @@ class _EmailFieldStatesState extends State<EmailFieldStates> {
           buildSpGridItem(
             context,
             label: 'Initial',
-            child: TextFormField(
-                decoration: InputDecoration(
-              hintText: "Login",
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: darkColor2.withOpacity(0.2), width: 2),
-              ),
-            )),
+            child: const InitialEmailField(),
           ),
           buildSpGridItem(
             context,
             label: 'Focused',
-            child: TextFormField(
-              focusNode: _focusNode,
-              decoration: const InputDecoration(hintText: "Login"),
-            ),
+            child: FocusedEmailField(focusNode: _focusNode),
           ),
           buildSpGridItem(
             context,
             label: 'Error',
-            child: ValueListenableBuilder<bool>(
-              valueListenable: _isErrorNotifier,
-              builder: (context, isError, _) {
-                return TextFormField(
-                  controller: _emailController,
-                  decoration: InputDecoration(
-                    fillColor: isError ? redLight1 : whiteColor,
-                    filled: true,
-                  ),
-                  validator: _validateEmail,
-                );
-              },
+            child: ErrorEmailField(
+              isErrorNotifier: _isErrorNotifier,
+              emailController: _emailController,
+              validateEmail: _validateEmail,
             ),
           ),
           buildSpGridItem(
             context,
             label: 'Disabled',
-            child: TextFormField(
-              enabled: false,
-              decoration: const InputDecoration(hintText: "Login"),
-            ),
+            child: const DisabledEmailField(),
           ),
         ],
       ),
