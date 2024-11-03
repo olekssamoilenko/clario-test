@@ -1,16 +1,17 @@
 # clario_test
 
-A new Flutter project.
+Clario test project
+
+## Information
+Flutter project with form validation and web page showcase. Web version is included in the package  for easy access.
+
+## Features and Packages used
+- Form validation
+- Web page showcase
+- Flutter Bloc
+- formz
 
 ## Getting Started
+To run web version, run 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+`flutter run -d chrome `
