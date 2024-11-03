@@ -8,13 +8,11 @@ SpGridItem buildSpGridItem(
   required String label,
 }) {
   return SpGridItem(
-    xs: 12,
     md: 6,
     lg: 3,
     padding: const EdgeInsets.symmetric(horizontal: 40),
     order: const SpOrder(sm: 0, xs: 0),
     child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           label,

@@ -15,7 +15,6 @@ class EmailInput extends StatelessWidget {
       builder: (context, state) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             CustomTextFormField(
               initialValue: state.email.value,

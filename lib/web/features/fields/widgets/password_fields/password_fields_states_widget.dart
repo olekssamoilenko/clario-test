@@ -6,7 +6,6 @@ import '../../../../../common/consts/color_consts.dart';
 import '../../../../../common/utils/app_utils.dart';
 import '../../../../../theme/assets.dart';
 
-
 class PasswordFieldStates extends StatefulWidget {
   const PasswordFieldStates({super.key});
 
@@ -99,7 +98,7 @@ class _PasswordFieldStatesState extends State<PasswordFieldStates> {
 
   OutlineInputBorder _buildBorder(Color color) {
     return OutlineInputBorder(
-      borderSide: BorderSide(color: color, width: 2, style: BorderStyle.solid),
+      borderSide: BorderSide(color: color, width: 2),
       borderRadius: BorderRadius.circular(30),
     );
   }

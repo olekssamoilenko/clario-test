@@ -17,15 +17,12 @@ class HeaderTextWidget extends StatelessWidget {
           padding: const EdgeInsets.only(left: 40),
           children: [
             SpGridItem(
-              xs: 12,
               md: 6,
               lg: 5,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   RichText(
-                    textAlign: TextAlign.start,
                     text: TextSpan(
                       children: <TextSpan>[
                         TextSpan(

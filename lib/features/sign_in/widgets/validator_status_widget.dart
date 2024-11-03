@@ -34,14 +34,16 @@ class ValidationStatusWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: validationItems
-                .map((item) => Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: ValidationStatusText(
-                        isValid: item.isValid,
-                        text: item.text,
-                        isSubmitted: state.isSubmitted,
-                      ),
-                    ))
+                .map(
+                  (item) => Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: ValidationStatusText(
+                      isValid: item.isValid,
+                      text: item.text,
+                      isSubmitted: state.isSubmitted,
+                    ),
+                  ),
+                )
                 .toList(),
           ),
         );

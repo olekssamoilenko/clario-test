@@ -7,7 +7,6 @@ import '../../../../../common/consts/color_consts.dart';
 import '../../../../../features/sign_in/widgets/validator_status_widget.dart';
 import '../../../../../theme/assets.dart';
 
-
 class ClickedValidationWidget extends StatefulWidget {
   const ClickedValidationWidget({super.key});
 
@@ -25,47 +24,50 @@ class _ClickedValidationWidget extends State<ClickedValidationWidget> {
     context.read<ValidationBloc>().add(FormSubmitted());
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ValidationBloc, ValidationState>(builder: (context, state) {
-      return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextFormField(
-            initialValue: 'example@.com1',
-            obscureText: _obscurePassword,
-            onChanged: (password) {
-              context.read<ValidationBloc>().add(PasswordChangedEvent(passwordValue: password));
-            },
-            decoration: InputDecoration(
-              hintText: "Login",
-              fillColor: redLight1,
-              filled: true,
-              enabledBorder: _buildOutlineInputBorder(),
-              focusedBorder: _buildOutlineInputBorder(),
-              suffixIcon: IconButton(
-                icon: SvgPicture.asset(
-                  _obscurePassword ? hidePassword : showPassword,
+    return BlocBuilder<ValidationBloc, ValidationState>(
+      builder: (context, state) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextFormField(
+              initialValue: 'example@.com1',
+              obscureText: _obscurePassword,
+              onChanged: (password) {
+                context.read<ValidationBloc>().add(PasswordChangedEvent(passwordValue: password));
+              },
+              decoration: InputDecoration(
+                hintText: "Login",
+                fillColor: redLight1,
+                filled: true,
+                enabledBorder: _buildOutlineInputBorder(),
+                focusedBorder: _buildOutlineInputBorder(),
+                suffixIcon: IconButton(
+                  icon: SvgPicture.asset(
+                    _obscurePassword ? hidePassword : showPassword,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _obscurePassword = !_obscurePassword;
+                    });
+                  },
                 ),
-                onPressed: () {
-                  setState(() {
-                    _obscurePassword = !_obscurePassword;
-                  });
-                },
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          const ValidationStatusWidget(),
-          const SizedBox(height: 40),
-        ],
-      );
-    });
+            const SizedBox(height: 20),
+            const ValidationStatusWidget(),
+            const SizedBox(height: 40),
+          ],
+        );
+      },
+    );
   }
 
   OutlineInputBorder _buildOutlineInputBorder() {
     return const OutlineInputBorder(
-      borderSide: BorderSide(color: redLight, style: BorderStyle.solid, width: 2),
+      borderSide: BorderSide(color: redLight, width: 2),
       borderRadius: BorderRadius.all(Radius.circular(30)),
     );
   }

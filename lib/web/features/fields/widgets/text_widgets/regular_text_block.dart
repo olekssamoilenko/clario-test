@@ -16,7 +16,6 @@ class RegularTextBlock extends StatelessWidget {
         padding: const EdgeInsets.only(left: 40),
         children: [
           SpGridItem(
-            xs: 12,
             md: 6,
             lg: 5,
             child: Text(
