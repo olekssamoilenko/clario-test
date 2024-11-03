@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/validation_bloc/validation_bloc.dart';
 
-
 class GlobalBlocProvider extends StatelessWidget {
   const GlobalBlocProvider({
     super.key,
