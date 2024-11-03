@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:form_demo/theme/theme.dart';
 
 import 'common/pages/home_page.dart';
+import 'common/pages/home_page_web.dart';
 import 'common/widgets/global_bloc_provider.dart';
 
 void main() {
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: const ApplicationTheme().light(),
       home: const GlobalBlocProvider(
-        child: HomePage(),
+        child: kIsWeb ? HomePageWeb() : HomePage(),
       ),
     );
   }
