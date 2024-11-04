@@ -17,14 +17,15 @@ class EmailFieldStates extends StatefulWidget {
 class _EmailFieldStatesState extends State<EmailFieldStates> {
   final _formKey = GlobalKey<FormState>();
   late final FocusNode _focusNode;
+  ///This one is required to show error state right after form init
   final _isErrorNotifier = ValueNotifier<bool>(false);
-  late final TextEditingController _emailController;
+  final TextEditingController _emailController = TextEditingController(text: 'Example.com');
 
   @override
   void initState() {
     super.initState();
     _focusNode = FocusNode()..requestFocus();
-    _emailController = TextEditingController(text: 'Example.com');
+    ///This one is required to show error state right after form init
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _formKey.currentState?.validate();
     });

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simple_grid/simple_grid.dart';
 
-//wrapper for grid cell
+///wrapper for grid cell
 SpGridItem buildSpGridItem(
   BuildContext context, {
   required Widget child,
