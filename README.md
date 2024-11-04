@@ -16,7 +16,7 @@ Flutter project with form validation and web page showcase. Web version is inclu
 ## Project Structure
 
 The project is organized as follows:
-
+```
 lib/
 ├── common/
 │   ├── bloc/          # BLoC classes for state management
@@ -34,7 +34,7 @@ lib/
         └──fields/
             ├──screens/
             ├──widgets/
-
+ ```
 ## Features and Packages used
 - Form validation
 - Web page showcase
@@ -42,6 +42,6 @@ lib/
 - formz
 
 ## Getting Started
-To run web version, run 
+To run web version, run
 
 `flutter run -d chrome `
