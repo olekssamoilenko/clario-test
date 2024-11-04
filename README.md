@@ -8,10 +8,10 @@ Flutter project with form validation and web page showcase. Web version is inclu
 ### Installation
 
 1. **Clone the repository:**
-   ```bash
+   ```
    git clone https://github.com/your-username/clario-test.git
    cd clario-test
-   
+   flutter pub get
    ```
 ## Project Structure
 
