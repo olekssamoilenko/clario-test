@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:form_demo/features/sign_in/widgets/validation_status_text.dart';
 
 import '../../../common/bloc/validation_bloc/validation_bloc.dart';
-import '../models/validation_item_model.dart';
+import '../../../common/models/validation_item_model.dart';
 
 class ValidationStatusWidget extends StatelessWidget {
   const ValidationStatusWidget({

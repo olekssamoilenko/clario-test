@@ -4,8 +4,10 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 
-import '../../../features/sign_in/models/email.dart';
-import '../../../features/sign_in/models/password.dart';
+import '../../models/email.dart';
+import '../../models/password.dart';
+
+
 
 part 'validation_event.dart';
 part 'validation_state.dart';
